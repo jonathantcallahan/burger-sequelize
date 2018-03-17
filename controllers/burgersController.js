@@ -26,7 +26,7 @@ module.exports = function(app) {
 
     
 
-// app.post('/', (req, res)=>{
+app.post('/', (req, res)=>{
 //     // orm.add(req.body.name, (data)=>{
 //     //     console.log(data)
 //     //     res.end()
@@ -38,7 +38,24 @@ module.exports = function(app) {
 //         console.log(burger)
 //         res.end();
 //     });
-// })
+    db.Burgers.create({
+        name: req.body.name,
+        eaten: 0
+    }).then(result => {
+        console.log(result)
+        res.end()
+    })
+ })
+
+ app.put('/:id', (req, res) => {
+     db.Burgers.update(
+         {eaten: 1},
+        {where: {id: req.params.id}})
+        .then(result => {
+            console.log(result);
+            res.end()
+        })
+ })
 
 //  app.put('/:id', (req, res)=>{
 // //     console.log('got request')
