@@ -14,8 +14,10 @@ app.engine('handlebars', expbhs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 var routes = require('./controllers/burgersController');
-app.use(routes);
+const controller = require('./controllers/burgersController')
+
+controller(app);
 
 app.listen(PORT, ()=> {
-//    console.log(`Listening on port ${PORT}...`)
+    console.log(`Listening on port ${PORT}...`)
 })
