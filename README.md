@@ -1,0 +1,2 @@
+# burger-sequelize
+Sequelize Homework
