@@ -1,2 +1,2 @@
-# burger-sequelize
-Sequelize Homework
+# burger
+Handlebars Homework

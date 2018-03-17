@@ -1,0 +1,27 @@
+<h1>Burger Z0n3</h1>
+
+<div class='burger-container'>
+    <h3>Burgers to Eat:</h3>
+    <ul>
+        {{#each burger}}
+            {{#unless eaten}}
+                <li>{{name}} <button data-id='{{id}}'>Eat dat burger!</button></li>
+            {{/unless}}
+        {{/each}}
+    </ul>
+</div>
+
+<div class='burger-container'>
+    <h3>Burger Museum:</h3>
+    <ul>
+        {{#each burger}}
+            {{#if eaten}}
+                <li>{{name}}</li>
+            {{/if}}
+        {{/each}}
+    </ul>
+</div>
+
+<h2>Add burger?</h2>
+<input type='text' placeholder="burger name" id='burger-name'>
+<button type='button' id='submit'>SUBMIT</button>
