@@ -18,6 +18,11 @@ const controller = require('./controllers/burgersController')
 
 controller(app);
 
-app.listen(PORT, ()=> {
-    console.log(`Listening on port ${PORT}...`)
+const db = require('./models')
+
+db.sequelize.sync().then(()=>{
+    app.listen(PORT, ()=> {
+        console.log(`Listening on port ${PORT}...`)
+    })
 })
+
