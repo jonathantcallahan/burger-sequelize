@@ -1,27 +1,34 @@
-<h1>Burger Z0n3</h1>
+<h1 style='text-align: center;'>Burger Z0n3</h1>
 
-<div class='burger-container'>
-    <h3>Burgers to Eat:</h3>
-    <ul>
-        {{#each burger}}
-            {{#unless eaten}}
-                <li>{{name}} <button data-id='{{id}}'>Eat dat burger!</button></li>
-            {{/unless}}
-        {{/each}}
-    </ul>
+<div class='pure-g'>
+    <div class='pure-u-1-2'>
+        <h3>Burgers to Eat:</h3>
+        <ul>
+            {{#each burger}}
+                {{#unless eaten}}
+                    <li class='burger-name'>{{name}} <button class='button-small' data-id='{{id}}'><i class="fas fa-utensils"></i> Eat dat burger!</button></li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class='pure-u-1-2'>
+        <h3>Burger Museum:</h3>
+        <ul>
+            {{#each burger}}
+                {{#if eaten}}
+                    <li>{{name}}</li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
 </div>
 
-<div class='burger-container'>
-    <h3>Burger Museum:</h3>
-    <ul>
-        {{#each burger}}
-            {{#if eaten}}
-                <li>{{name}}</li>
-            {{/if}}
-        {{/each}}
-    </ul>
+
+<div class='input-holder'>
+    <h2>Add burger?</h2>
+    <input type='text' placeholder="burger name" id='burger-name'>
+    <button class='button-success pure-button' id='submit'>SUBMIT</button>
 </div>
 
-<h2>Add burger?</h2>
-<input type='text' placeholder="burger name" id='burger-name'>
-<button type='button' id='submit'>SUBMIT</button>
+<img id='avocado-joe' src='https://ih1.redbubble.net/image.409052937.3923/flat,800x800,075,f.jpg'>

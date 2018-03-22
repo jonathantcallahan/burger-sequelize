@@ -1,0 +1,18 @@
+button {
+    background-color: none;
+    border: none;
+    border-radius: 3px;
+    padding: 4px;
+}
+
+li {
+    margin: 5px;
+}
+
+.input-holder {
+    text-align: center;
+}
+
+h3 {
+    margin-left: 30px;
+}
